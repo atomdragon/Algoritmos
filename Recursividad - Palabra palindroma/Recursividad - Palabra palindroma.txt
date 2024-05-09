@@ -1,0 +1,48 @@
+#include <iostream>
+
+using namespace std;
+
+//Ingresar una palabra y determinar si es palindroma o no.
+
+//Palindroma = al revez o al derecho se puede leer
+
+void del_reves(string _palabra);
+
+int main() {
+	//variables
+	string palabra;
+
+	//mensaje
+	cout << "Ingresar palabra" << endl;
+	cin >> palabra;
+
+
+	del_reves(palabra);
+
+	system("pause");
+	return 0;
+}
+
+void del_reves(string _palabra)
+{
+	int num = _palabra.length() - 1;
+
+	if (_palabra.length() > 1)
+	{
+		if (_palabra[0] == _palabra[num])
+		{
+			_palabra.pop_back();
+			_palabra.erase(0, 1);
+			cout << _palabra << endl;
+			del_reves(_palabra);
+		}
+		else
+		{
+			cout << "La palabra no es Palindroma" << endl;
+		}
+	}
+	else
+	{
+		cout << "La palabra es Palindroma" << endl;
+	}
+}

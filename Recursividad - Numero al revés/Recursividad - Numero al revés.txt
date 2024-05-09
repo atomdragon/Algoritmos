@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+
+void num_reve(int num);
+
+int main() {
+
+	num_reve(123456);
+	
+	cin.get();
+	return 0;
+}
+
+void num_reve(int num)
+{
+	if (num < 10)
+	{
+		cout << num;
+	}
+	else
+	{
+		
+		if (num % 10 == 0)
+		{
+			cout << num % 10;
+			num = num / 10;
+		}
+		else
+		{
+			cout << num % 10;
+			num = num - (num % 10);
+			num = num / 10;
+		}
+		num_reve(num);
+	}
+}

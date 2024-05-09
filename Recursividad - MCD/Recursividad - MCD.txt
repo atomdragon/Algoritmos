@@ -1,0 +1,28 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+void hallarMaxComunDiv(int n, int m){
+ if(m > n){
+   int aux=n;
+   n=m;
+   m = aux;
+ }
+  if(m != 0){
+   int aux = m;
+   m = n%m;
+   n = aux;
+   hallarMaxComunDiv(n,m);
+ }
+  else{
+    cout << n << endl;
+  }
+}
+
+int main() {
+  hallarMaxComunDiv(13, 39);
+  
+  return 0;
+}

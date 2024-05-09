@@ -1,0 +1,42 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int num_name();
+
+int main() {
+	//Declaracion e inicialización de variable
+	int num = num_name();
+	ofstream Beastars_File("Beastars_file.txt", ios::app);
+	string* name = new string[num];
+
+	//Process
+	if (!Beastars_File.is_open())
+	{
+		cout << "No es posible crear o abrir el archivo correctamente";
+	}
+	else
+	{
+		for (int i = 0; i < num; i++)
+		{
+			cin >> name[i];
+			Beastars_File << name[i] << endl;
+		}
+	}
+
+
+	system("pause");
+	return 0;
+}
+
+//Pedir el número de nombres
+int num_name()
+{
+	int num;
+
+	cout << "Ingresar el número de nombres a escribir: "; cin >> num; 
+	cout << endl;
+
+	return num;
+}
